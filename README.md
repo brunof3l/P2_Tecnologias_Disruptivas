@@ -1,7 +1,9 @@
-# Containerizando um site estático com Docker
+# Containerizando um site com Docker
 
 Aluno: Bruno Ferreira Fonseca
 Curso: Análise e Desenvolvimento de Sistemas (AEMS)
+Disciplina: Tecnologias Disruptivas
+Professor: Bruno Gabriel
 
 ## Sobre o trabalho
 
@@ -24,10 +26,7 @@ Fiz uma página estática (HTML, CSS, JS e uma imagem SVG) que explica como o Do
 
 Precisa ter o Docker instalado e aberto (Docker Desktop no Windows ou Mac).
 
-Entrar na pasta do projeto, onde está o Dockerfile
-
-
-```
+Abrir o terminal dentro da pasta do projeto, onde está o Dockerfile.
 
 Build da imagem:
 
@@ -72,9 +71,9 @@ docker rm meu-site
 
 ## Diferença entre imagem e container
 
-A imagem é o pacote pronto. Ela tem o Nginx e os arquivos do meu site dentro, mas fica parada, só guardada, e não dá para alterar. Quem cria ela é o docker build, seguindo o que está escrito no Dockerfile.
+A imagem é o pacote pronto. Ela tem o Nginx e os arquivos do meu site dentro, mas fica parada, só guardada, e não dá para alterar. Quem cria ela é o `docker build`, seguindo o que está escrito no Dockerfile.
 
-O container é essa imagem rodando. Quando eu uso o docker run, o Docker pega a imagem e liga ela, e aí o site fica no ar. Da mesma imagem dá para subir quantos containers eu quiser, e cada um fica isolado do outro.
+O container é essa imagem rodando. Quando eu uso o `docker run`, o Docker pega a imagem e liga ela, e aí o site fica no ar. Da mesma imagem dá para subir quantos containers eu quiser, e cada um fica isolado do outro.
 
 Eu entendi comparando com programação: a imagem é a classe e o container é o objeto criado a partir dela.
 
