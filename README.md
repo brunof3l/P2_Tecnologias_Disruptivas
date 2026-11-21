@@ -1,9 +1,12 @@
 # Containerizando um site com Docker
 
-Aluno: Bruno Ferreira Fonseca.
-Curso: Análise e Desenvolvimento de Sistemas (AEMS).
-Disciplina: Tecnologias Disruptivas.
-Professor: Bruno Gabriel.
+Aluno: Bruno Ferreira Fonseca
+
+Curso: Análise e Desenvolvimento de Sistemas (AEMS)
+
+Disciplina: Tecnologias Disruptivas
+
+Professor: Bruno Gabriel
 
 ## Sobre o trabalho
 
