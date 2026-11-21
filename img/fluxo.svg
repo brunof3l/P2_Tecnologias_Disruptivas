@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" role="img" aria-labelledby="t">
+<title id="t">Fluxo: Dockerfile vira imagem com docker build e a imagem vira container com docker run</title>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#14232b"/></marker></defs>
+<g font-family="system-ui, Arial, sans-serif" font-size="17" fill="#14232b">
+<rect x="10" y="35" width="170" height="70" fill="#f7f9f9" stroke="#14232b" stroke-width="2"/>
+<text x="95" y="76" text-anchor="middle" font-weight="700">Dockerfile</text>
+<rect x="275" y="35" width="170" height="70" fill="#f7f9f9" stroke="#1d63ed" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="360" y="76" text-anchor="middle" font-weight="700">Imagem</text>
+<rect x="540" y="35" width="170" height="70" fill="#2e6a57"/>
+<text x="625" y="76" text-anchor="middle" font-weight="700" fill="#f0b323">Container</text>
+<line x1="182" y1="70" x2="272" y2="70" stroke="#14232b" stroke-width="2" marker-end="url(#a)"/>
+<line x1="447" y1="70" x2="537" y2="70" stroke="#14232b" stroke-width="2" marker-end="url(#a)"/>
+<text x="227" y="58" text-anchor="middle" font-size="14">docker build</text>
+<text x="492" y="58" text-anchor="middle" font-size="14">docker run</text>
+<text x="360" y="132" text-anchor="middle" font-size="14">parada, só leitura</text>
+<text x="625" y="132" text-anchor="middle" font-size="14">rodando de verdade</text>
+</g></svg>

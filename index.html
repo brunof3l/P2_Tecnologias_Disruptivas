@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docker, do jeito que eu entendi</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="porta">
+  <div class="chapa">
+    <h1>Docker, do jeito que eu entendi</h1>
+    <p>Esse site está sendo servido por um container com Nginx. Foi feito para o trabalho P2 de containerização.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>O problema que o Docker resolve</h2>
+    <p>Todo mundo que programa já ouviu ou falou "na minha máquina funciona". O programa depende da versão do sistema, de biblioteca instalada, de configuração... e basta uma coisa diferente para quebrar.</p>
+    <p>O Docker resolve isso empacotando o programa junto com tudo que ele precisa. Aí ele roda igual no meu notebook, no servidor da empresa ou na nuvem. Por isso empresas como Netflix e Spotify rodam boa parte dos seus serviços em contêineres.</p>
+    <p>Container também não é máquina virtual. A VM carrega um sistema operacional inteiro dentro dela. O container usa o kernel do próprio computador e isola só o processo, então sobe em segundos e ocupa bem menos espaço.</p>
+  </section>
+
+  <section>
+    <h2>Imagem e container</h2>
+    <div class="par">
+      <div class="imagem">
+        <h3>Imagem</h3>
+        <p>É o pacote pronto, só leitura. Aqui ela tem o Nginx e os arquivos do meu site. Fica guardada e não faz nada sozinha.</p>
+      </div>
+      <div class="rodando">
+        <h3>Container</h3>
+        <p>É a imagem em execução. Dá para criar vários containers da mesma imagem, cada um isolado do outro.</p>
+      </div>
+    </div>
+    <p>Para quem programa, a comparação que mais ajudou foi essa: a imagem é a classe e o container é o objeto criado a partir dela.</p>
+  </section>
+
+  <section>
+    <h2>Do arquivo até o navegador</h2>
+    <img class="fluxo" src="img/fluxo.svg" alt="Dockerfile vira imagem com docker build, e a imagem vira container com docker run">
+    <ol class="passos">
+      <li>Escrevo o <strong>Dockerfile</strong>, que é a receita: qual base usar e quais arquivos copiar.</li>
+      <li>Rodo o <strong>docker build</strong> e o Docker monta a imagem seguindo a receita.</li>
+      <li>Rodo o <strong>docker run</strong> e a imagem vira um container funcionando.</li>
+      <li>Abro <strong>localhost:8080</strong>. A porta 8080 do meu computador é ligada na porta 80 do container, onde o Nginx está escutando.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>O Dockerfile desse projeto</h2>
+    <pre class="codigo">FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/
+COPY css/ /usr/share/nginx/html/css/
+COPY js/ /usr/share/nginx/html/js/
+COPY img/ /usr/share/nginx/html/img/
+EXPOSE 80</pre>
+    <p><code>FROM</code> escolhe a base, o Nginx numa versão enxuta (alpine). Os <code>COPY</code> levam o site para a pasta que o Nginx lê. O <code>EXPOSE</code> avisa que o container usa a porta 80.</p>
+  </section>
+
+  <section>
+    <h2>Testa aí</h2>
+    <p>Esse terminal é uma simulação, só para mostrar o que cada comando faz. Os comandos de verdade estão no README.</p>
+    <div class="botoes">
+      <button type="button" data-cmd="build">docker build</button>
+      <button type="button" data-cmd="run">docker run</button>
+      <button type="button" data-cmd="ps">docker ps</button>
+      <button type="button" data-cmd="stop">docker stop</button>
+      <button type="button" data-cmd="rm">docker rm</button>
+    </div>
+    <p id="estado" class="estado" aria-live="polite"><span class="luz"></span><span id="estadoTexto">Nenhuma imagem criada ainda.</span></p>
+    <pre id="saida" class="codigo terminal" aria-live="polite">Clique em um comando para começar.</pre>
+  </section>
+</main>
+
+<footer>
+  <p>Feito por Bruno Ferreira Fonseca, ADS na AEMS. IA que ajudou no desenvolvimento: Claude (Anthropic).</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
